@@ -26,19 +26,16 @@
 
 - 下载sentence-transformer模型
 
-![image-20240110210703489](assets/image-20240110210703489.png)
+![t2.png](assets/t2.png)
+![t3.png](assets/t3.png)
 
 - 创建知识库
 
-![image-20240110212050278](assets/image-20240110212050278.png)
+![t4.png](assets/t4.png)
 
-- 启动web_demo.py并配置端口映射
-
-![image-20240110212909954](assets/image-20240110212909954.png)
 
 - 测试
 
-![image-20240110213017378](assets/image-20240110213017378.png)
-
-![image-20240110213104607](assets/image-20240110213104607.png)
+![t5.png](assets/t5.png)
+![t1.png](assets/t1.png)
 
