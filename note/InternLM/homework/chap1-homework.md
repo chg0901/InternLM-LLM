@@ -29,11 +29,20 @@
 
 ## 使用 InternLM-Chat-7B 模型生成 300 字的小故事
 
-![image-20240106224206421](assets/image-20240106224206421.png)
+![g3.png](assets%2Fg3.png)
 
 ## 下载InternLM-20B的config.json文件到本地
 
+### 下载整个InternLM-20B模型及有关文件
 ```
+git lfs install
+git clone https://huggingface.co/internlm/internlm-20b
+```
+![g1.png](assets%2Fg1.png)
+![g2.png](assets%2Fg2.png)
+
+### 下载InternLM-20B模型config文件[Learned from https://github.com/blurmemo/LLM/tree/main] 
+``` 
 # 下载流程
 # 安装huggingface hub
 !pip install -U huggingface_hub
@@ -47,20 +56,19 @@ hf_hub_download(repo_id="internlm/internlm-7b", filename="config.json", local_di
 
 ### 下载前
 
-![image-20240106233849869.png](assets%2Fimage-20240106233849869.png)
+![g4.png](assets%2Fg4.png)
 
 ### 下载后
 
-![image-20240106233917368](assets/image-20240106233917368.png)
+![g5.png](assets%2Fg5.png)
 
 ## 完成浦语·灵笔的图文理解及创作部署
 
 ### 创作
 
-![image-20240106230814209](assets/image-20240106230814209.png)
-
-![image-20240106230931461](assets/image-20240106230931461.png)
+![g6.webp](assets%2Fg6.webp)
+![g6_2.webp](assets%2Fg6_2.webp)
 
 ##  完成 Lagent 工具调用 Demo 创作部署
 
-![image-20240107012002986](assets/image-20240107012002986.png)
+![g7.webp](assets/g7.webp)
