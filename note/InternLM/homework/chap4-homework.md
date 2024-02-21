@@ -23,21 +23,62 @@
 
 # 基础作业
 
-- 采用网页Gradio部署InternLM-Chat-7B模型
-
-- 环境配置
-- FastTransformer格式模型转换为Lmdeploy TurboMind格式
-
-![image-20240120011937428](assets/image-20240120011937428.png)
-
-- 执行
-
+- 采用workspace_quantW4A16量化的模型来用2.3中的TurboMind推理+API服务部署模型,
 ```
-lmdeploy serve gradio ./workspace
+(lmdeploy) (base) root@intern-studio-006861:~/lmdeploy# # ApiServer+Turbomind   api_server => AsyncEngine => TurboMind
+(lmdeploy) (base) root@intern-studio-006861:~/lmdeploy# lmdeploy serve api_server ./workspace_quantW4A16 \
+> --server_name 0.0.0.0 \
+> --server_port 23333 \
+> --instance_num 64 \
+> --tp 1
+
+model_source: workspace
+WARNING: Can not find tokenizer.json. It may take long time to initialize the tokenizer.
+[WARNING] gemm_config.in is not found; using default GEMM algo
+HINT:    Please open http://0.0.0.0:23333 in a browser for detailed api usage!!!
+HINT:    Please open http://0.0.0.0:23333 in a browser for detailed api usage!!!
+HINT:    Please open http://0.0.0.0:23333 in a browser for detailed api usage!!!
+INFO:     Started server process [177751]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:23333 (Press CTRL+C to quit)
+INFO:     127.0.0.1:56614 - "POST /v1/chat/interactive HTTP/1.1" 200 OK
+```
+比较奇怪的是model_source: workspace ,在执行代码中, 使用的是./workspace_quantW4A16
+
+重新开一个Termial
+![v2-31666bfdaa4c75897b5c0110ff721165_r.png](assets/v2-31666bfdaa4c75897b5c0110ff721165_r.png)
+
+也可以打开http://localhost:23333, 在v1_chat_completions_post中设置parameters
+
+![v2-a969cca85730f6bef897e1c58049d9e5_r.png](assets/v2-a969cca85730f6bef897e1c58049d9e5_r.png)
+
+
+### 修改默认参数中的model和messages, 添加`"renew_session": false`,删除`"session_id": -1,`
+
+### 修改后参数
+```
+{
+  "model": "internlm-chat-7b",
+  "messages": "请以元宵节生成一篇300字的小故事, 主题为猜灯谜",
+  "temperature": 0.7,
+  "top_p": 1,
+  "n": 1,
+  "max_tokens": 512,
+  "stop": false,
+  "stream": false,
+  "presence_penalty": 0,
+  "frequency_penalty": 0,
+  "user": "string",
+  "repetition_penalty": 1,
+  "renew_session": false,
+  "ignore_eos": false
+}
 ```
 
-![image-20240120014607783](assets/image-20240120014607783.png)
+
+![v2-2df3cf4a086a8d8b794582356d45f455_r.png](assets/v2-2df3cf4a086a8d8b794582356d45f455_r.png)
 
 - 生成 300 字的小故事（需截图）
 
-![image-20240120014703455](assets/image-20240120014703455.png)
+![v2-9771459d1ac588f428f793b840a1b1d2_r.png](assets/v2-9771459d1ac588f428f793b840a1b1d2_r.png)
