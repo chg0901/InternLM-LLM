@@ -1,5 +1,9 @@
 ## 大模型实战训练营笔记
 
+### chap0-5(1-6)来自原来的repo, 这里留着为了后面查看ppt等信息方便, 
+### 很好的笔记: [书生·浦语大模型实战营（作业汇总） - 知乎](https://zhuanlan.zhihu.com/p/680398625)
+
+
 - chap1：Introduction
   
   **My Zhihu Notes in Chinese: [书生·浦语大模型全链路开源体系[大模型实战营01]](https://zhuanlan.zhihu.com/p/675922698)**
