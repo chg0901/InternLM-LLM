@@ -30,3 +30,7 @@
 - chap6：**OpenCompass Evaluation**
    
   **My Zhihu Notes in Chinese: [OpenCompass 大模型评测[大模型实战营06]](https://zhuanlan.zhihu.com/p/683540086)**
+
+- **结题项目 [王者荣耀问答助手[大模型实战营 结题项目]](https://zhuanlan.zhihu.com/p/683656455?)**
+
+
