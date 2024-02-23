@@ -1,7 +1,9 @@
 ## 大模型实战训练营笔记
 
 ### chap0-5(1-6)来自原来的repo, 这里留着为了后面查看ppt等信息方便, 
-### 很好的笔记:[参考笔记1](https://github.com/SimonGuoNjust/Notes/tree/main/internLM )    [参考笔记作业2](https://zhuanlan.zhihu.com/p/680398625)
+### 很好的笔记:
+1. [参考笔记1](https://github.com/SimonGuoNjust/Notes/tree/main/internLM )    
+2. [参考笔记作业2](https://zhuanlan.zhihu.com/p/680398625)
 
 ## My Notes and Experiments
 
